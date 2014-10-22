@@ -41,6 +41,14 @@ dropbox.addEventListener("drop", function(e) {
     if(xhr.upload) {
         xhr.open("POST", "/ajax/upload", true);
         xhr.setRequestHeader("X-File-Name", file.name);
+        
+        xhr.addEventListener("progress", function(event) {
+            if (event.lengthComputable) {
+                var percent = event.loaded / event.total;
+                console.log(percent);
+            }
+        }, false);
+        
         xhr.onload = function(e) {
             link = this.responseText;
             uploaded.style.display = 'block';
@@ -48,6 +56,7 @@ dropbox.addEventListener("drop", function(e) {
             input.focus();
             input.select();
         }
+        
         xhr.send(file);
     }
 }, false);

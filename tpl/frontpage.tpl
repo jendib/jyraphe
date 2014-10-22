@@ -54,7 +54,7 @@
         </div>
 
         <div class="text-center">
-            Powered by <a href="http://gitorious.org/jyraphe/">Jyraphe</a><br>
+            Powered by <a href="https://github.com/jendib/jyraphe/">Jyraphe</a><br>
         </div>
       </div>
     </div>
